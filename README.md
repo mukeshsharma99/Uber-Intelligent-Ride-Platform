@@ -1,5 +1,21 @@
-# Uber-Intelligent-Ride-Platform
+## Uber Intelligent Ride Platform 🚗
 
-### An intelligent and scalable ride-hailing platform inspired by real-world ride-sharing systems.
+## 📈 Development Progress
 
-### The project focuses on backend engineering, microservices, real-time communication, cloud deployment, and AI/ML-based intelligent ride features.
+
+### Day 1 — Project Foundation
+- [x] Create GitHub repository
+- [x] Create project structure
+- [x] Create Python virtual environment
+- [x] Configure `.gitignore`
+- [x] Create initial README
+- [x] Push project to GitHub
+
+### Day 2 — Auth Service Foundation
+- [x] Create Auth Service
+- [x] Configure FastAPI
+- [x] Configure Uvicorn
+- [x] Create `/health` endpoint
+- [x] Run FastAPI locally
+- [x] Push changes to GitHub
+
