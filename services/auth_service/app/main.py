@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from services.auth_service.app.routes.health import router as health_router
+from services.auth_service.app.routes.health import health_router
 
 app = FastAPI()
 
