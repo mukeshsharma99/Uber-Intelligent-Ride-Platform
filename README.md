@@ -69,3 +69,6 @@ POST /user
 ### 🔜 Next Step
 
 Move the temporary user endpoint into `routes/auth.py` and implement the proper `/auth/register` flow.
+
+
+### By- Mukesh Kumar
