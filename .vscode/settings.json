@@ -1,4 +1,11 @@
 {
-    "python-envs.defaultEnvManager": "ms-python.python:conda",
-    "python-envs.defaultPackageManager": "ms-python.python:conda"
+  "My Auto Text": {
+    "prefix": "oneword",
+    "body": [
+      "This is the auto-expanded text or code block."
+    ],
+    "description": "Type 'oneword' and press Tab to expand"
+  },
+  "python-envs.defaultEnvManager": "ms-python.python:conda",
+  "python-envs.defaultPackageManager": "ms-python.python:conda"
 }
