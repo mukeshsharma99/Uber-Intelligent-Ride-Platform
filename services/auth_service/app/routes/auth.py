@@ -1,13 +1,12 @@
 from fastapi import APIRouter
 from services.auth_service.app.models.user import User
 
-router = APIRouter()
+auth_router = APIRouter(
+    prefix="/auth",
+    tags=["Authentication"]
+)
 
 
-@router.post("/register")
+@auth_router.post("/register")
 def register_user(user: User):
-    return {
-        "message": "User registered successfully",
-        "username": user.username,
-        "email": user.email
-    }
+    return user
