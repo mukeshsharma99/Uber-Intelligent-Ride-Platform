@@ -1,7 +1,11 @@
-from pydantic import BaseModel, EmailStr
+from sqlalchemy import Column, Integer, String
+from services.auth_service.app.database import Base
 
 
-class User(BaseModel):
-    username: str
-    email: EmailStr
-    password: str
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True, nullable=False, index=True)
+    email = Column(String, unique=True, nullable=False, index=True)
+    password_hash = Column(String, nullable=False)
