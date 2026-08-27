@@ -1,8 +1,8 @@
 # 🚗 Uber Intelligent Ride Platform
 
-A real-world inspired ride-hailing backend platform built with Python, FastAPI, Microservices, Machine Learning, and AI.
+A real-world inspired ride-hailing backend platform built with **Python, FastAPI, Microservices, PostgreSQL, Docker, Machine Learning, and AI**.
 
-## 📈 Development Progress
+## 📈 Current Development Progress
 
 ### 🏗️ Project Foundation
 
@@ -10,7 +10,7 @@ A real-world inspired ride-hailing backend platform built with Python, FastAPI, 
 - [x] Created project structure
 - [x] Set up Python virtual environment
 - [x] Added `.gitignore`
-- [x] Created initial README
+- [x] Created README
 - [x] Pushed project to GitHub
 
 ### 🔐 Authentication Service
@@ -21,7 +21,7 @@ A real-world inspired ride-hailing backend platform built with Python, FastAPI, 
 - [x] Created `routes` package
 - [x] Created `routes/health.py`
 - [x] Added `APIRouter`
-- [x] Connected the health router with `main.py`
+- [x] Connected health router with `main.py`
 - [x] Tested `/health` using Swagger UI
 - [x] Verified `200 OK` response
 
@@ -29,30 +29,49 @@ A real-world inspired ride-hailing backend platform built with Python, FastAPI, 
 
 - [x] Created `models` package
 - [x] Created `models/user.py`
-- [x] Created `User` Pydantic model
-- [x] Added username, email, and password fields
-- [x] Added email validation
-- [x] Connected the User model with FastAPI
+- [x] Created SQLAlchemy `User` model
+- [x] Added `id`, `username`, `email`, and `password_hash`
+- [x] Added unique username constraint
+- [x] Added unique email constraint
+
+### 📋 User Schema
+
+- [x] Created `schemas` package
+- [x] Created `schemas/user.py`
+- [x] Created `UserCreate` Pydantic schema
+- [x] Added username field
+- [x] Added email validation using `EmailStr`
+- [x] Added password field
+
+### 🔑 User Registration
+
 - [x] Created `POST /auth/register`
-- [x] Added password hashing using Argon2
-- [x] Tested user registration using Swagger UI
-- [x] Verified `200 OK` response
+- [x] Added Argon2 password hashing
+- [x] Added SQLAlchemy database session
+- [x] Connected registration API to PostgreSQL
+- [x] Successfully stored users in PostgreSQL
+- [x] Password stored as a secure hash
+- [x] Prevented duplicate usernames
+- [x] Prevented duplicate emails
+- [x] Added proper `400 Bad Request` responses
 
-## 🔄 Current Authentication Flow
+### 🗄️ Database
 
-```text
-Client
-   ↓
-FastAPI
-   ↓
-POST /auth/register
-   ↓
-User Model
-   ↓
-Pydantic Validation
-   ↓
-Password Hashing
-   ↓
-Secure Password Hash
-   ↓
-200 OK
+- [x] Set up PostgreSQL using Docker
+- [x] Created `uber_db` database
+- [x] Created `users` table
+- [x] Connected SQLAlchemy with PostgreSQL
+- [x] Verified user records using PostgreSQL
+
+### 🧪 API Testing
+
+Registration tested using **FastAPI Swagger UI**.
+
+#### Successful Registration
+
+```json
+{
+  "username": "mukesh2",
+  "email": "mukesh2@example.com",
+  "password": "Test@123"
+}
