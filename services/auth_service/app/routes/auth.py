@@ -1,4 +1,5 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from services.auth_service.app.database import SessionLocal
@@ -24,6 +25,26 @@ def get_db():
 @auth_router.post("/register")
 def register_user(user: UserCreate, db: Session = Depends(get_db)):
 
+    existing_username = db.query(User).filter(
+        User.username == user.username
+    ).first()
+
+    if existing_username:
+        raise HTTPException(
+            status_code=400,
+            detail="Username already exists"
+        )
+
+    existing_email = db.query(User).filter(
+        User.email == user.email
+    ).first()
+
+    if existing_email:
+        raise HTTPException(
+            status_code=400,
+            detail="Email already exists"
+        )
+
     hashed_password = hash_password(user.password)
 
     new_user = User(
@@ -32,9 +53,17 @@ def register_user(user: UserCreate, db: Session = Depends(get_db)):
         password_hash=hashed_password
     )
 
-    db.add(new_user)
-    db.commit()
-    db.refresh(new_user)
+    try:
+        db.add(new_user)
+        db.commit()
+        db.refresh(new_user)
+
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(
+            status_code=400,
+            detail="Username or email already exists"
+        )
 
     return {
         "id": new_user.id,
