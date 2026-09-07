@@ -75,3 +75,6 @@ Registration tested using **FastAPI Swagger UI**.
   "email": "mukesh2@example.com",
   "password": "Test@123"
 }
+
+
+### Mukesh Kumar 
