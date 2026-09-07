@@ -63,6 +63,15 @@ A real-world inspired ride-hailing backend platform built with **Python, FastAPI
 - [x] Connected SQLAlchemy with PostgreSQL
 - [x] Verified user records using PostgreSQL
 
+### 🔐 Password Security
+
+- [x] Created `utils/security.py`
+- [x] Configured `pwdlib` password hashing
+- [x] Added secure password hashing
+- [x] Added `hash_password()` function
+- [x] Added `verify_password()` function
+- [x] Prepared password verification for the login flow
+
 ### 🧪 API Testing
 
 Registration tested using **FastAPI Swagger UI**.
@@ -75,6 +84,3 @@ Registration tested using **FastAPI Swagger UI**.
   "email": "mukesh2@example.com",
   "password": "Test@123"
 }
-
-
-### Mukesh Kumar 
