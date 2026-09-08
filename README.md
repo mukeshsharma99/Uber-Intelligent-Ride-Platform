@@ -39,6 +39,7 @@ A real-world inspired ride-hailing backend platform built with **Python, FastAPI
 - [x] Created `schemas` package
 - [x] Created `schemas/user.py`
 - [x] Created `UserCreate` Pydantic schema
+- [x] Created `UserLogin` Pydantic schema
 - [x] Added username field
 - [x] Added email validation using `EmailStr`
 - [x] Added password field
@@ -70,13 +71,22 @@ A real-world inspired ride-hailing backend platform built with **Python, FastAPI
 - [x] Added secure password hashing
 - [x] Added `hash_password()` function
 - [x] Added `verify_password()` function
-- [x] Prepared password verification for the login flow
+- [x] Integrated password verification into login flow
+
+### 🔐 User Login
+
+- [x] Created `POST /auth/login`
+- [x] Added username lookup
+- [x] Added password verification
+- [x] Added invalid username/password handling
+- [x] Tested login using FastAPI Swagger UI
+- [x] Verified successful login with `200 OK`
 
 ### 🧪 API Testing
 
-Registration tested using **FastAPI Swagger UI**.
+Registration and login tested using **FastAPI Swagger UI**.
 
-#### Successful Registration
+#### ✅ Successful Registration
 
 ```json
 {
