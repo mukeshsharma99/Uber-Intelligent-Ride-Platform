@@ -5,7 +5,11 @@ from sqlalchemy.orm import Session
 from services.auth_service.app.database import SessionLocal
 from services.auth_service.app.models.user import User
 from services.auth_service.app.schemas.user import UserCreate, UserLogin
-from services.auth_service.app.utils.security import hash_password, verify_password
+from services.auth_service.app.utils.security import (
+    hash_password,
+    verify_password
+)
+from services.auth_service.app.utils.jwt import create_access_token
 
 
 auth_router = APIRouter(
@@ -22,8 +26,15 @@ def get_db():
         db.close()
 
 
+# =========================
+# User Registration
+# =========================
+
 @auth_router.post("/register")
-def register_user(user: UserCreate, db: Session = Depends(get_db)):
+def register_user(
+    user: UserCreate,
+    db: Session = Depends(get_db)
+):
 
     existing_username = db.query(User).filter(
         User.username == user.username
@@ -72,19 +83,28 @@ def register_user(user: UserCreate, db: Session = Depends(get_db)):
     }
 
 
+# =========================
+# User Login
+# =========================
+
 @auth_router.post("/login")
-def login_user(user: UserLogin, db: Session = Depends(get_db)):
+def login_user(
+    user: UserLogin,
+    db: Session = Depends(get_db)
+):
 
     existing_user = db.query(User).filter(
         User.username == user.username
     ).first()
 
+    # Invalid username
     if not existing_user:
         raise HTTPException(
             status_code=401,
             detail="Invalid username or password"
         )
 
+    # Invalid password
     if not verify_password(
         user.password,
         existing_user.password_hash
@@ -94,8 +114,17 @@ def login_user(user: UserLogin, db: Session = Depends(get_db)):
             detail="Invalid username or password"
         )
 
+    # Create JWT access token
+    access_token = create_access_token(
+        data={
+            "sub": existing_user.username
+        }
+    )
+
     return {
         "message": "Login successful",
+        "access_token": access_token,
+        "token_type": "bearer",
         "id": existing_user.id,
         "username": existing_user.username,
         "email": existing_user.email
