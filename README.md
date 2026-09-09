@@ -5,7 +5,6 @@ A real-world inspired ride-hailing backend platform built with **Python, FastAPI
 ## 📈 Current Development Progress
 
 ### 🏗️ Project Foundation
-
 - [x] Created GitHub repository
 - [x] Created project structure
 - [x] Set up Python virtual environment
@@ -14,83 +13,75 @@ A real-world inspired ride-hailing backend platform built with **Python, FastAPI
 - [x] Pushed project to GitHub
 
 ### 🔐 Authentication Service
-
 - [x] Created Auth Service
 - [x] Set up FastAPI and Uvicorn
 - [x] Created `/health` endpoint
-- [x] Created `routes` package
-- [x] Created `routes/health.py`
-- [x] Added `APIRouter`
-- [x] Connected health router with `main.py`
-- [x] Tested `/health` using Swagger UI
-- [x] Verified `200 OK` response
+- [x] Added APIRouter
+- [x] Connected health router
+- [x] Tested `/health` with Swagger UI
+- [x] Verified `200 OK`
 
 ### 👤 User Management
-
-- [x] Created `models` package
-- [x] Created `models/user.py`
 - [x] Created SQLAlchemy `User` model
-- [x] Added `id`, `username`, `email`, and `password_hash`
+- [x] Added `id`, `username`, `email`, `password_hash`
 - [x] Added unique username constraint
 - [x] Added unique email constraint
 
 ### 📋 User Schema
-
-- [x] Created `schemas` package
-- [x] Created `schemas/user.py`
-- [x] Created `UserCreate` Pydantic schema
-- [x] Created `UserLogin` Pydantic schema
-- [x] Added username field
-- [x] Added email validation using `EmailStr`
-- [x] Added password field
+- [x] Created `UserCreate` schema
+- [x] Created `UserLogin` schema
+- [x] Added `EmailStr` validation
+- [x] Added password validation
 
 ### 🔑 User Registration
-
 - [x] Created `POST /auth/register`
 - [x] Added Argon2 password hashing
-- [x] Added SQLAlchemy database session
 - [x] Connected registration API to PostgreSQL
-- [x] Successfully stored users in PostgreSQL
-- [x] Password stored as a secure hash
-- [x] Prevented duplicate usernames
-- [x] Prevented duplicate emails
-- [x] Added proper `400 Bad Request` responses
+- [x] Stored users securely
+- [x] Prevented duplicate usernames/emails
+- [x] Added `400 Bad Request` handling
 
 ### 🗄️ Database
-
-- [x] Set up PostgreSQL using Docker
-- [x] Created `uber_db` database
+- [x] Set up PostgreSQL with Docker
+- [x] Created `uber_db`
 - [x] Created `users` table
-- [x] Connected SQLAlchemy with PostgreSQL
-- [x] Verified user records using PostgreSQL
+- [x] Connected SQLAlchemy to PostgreSQL
+- [x] Verified user records
 
 ### 🔐 Password Security
-
 - [x] Created `utils/security.py`
-- [x] Configured `pwdlib` password hashing
-- [x] Added secure password hashing
-- [x] Added `hash_password()` function
-- [x] Added `verify_password()` function
-- [x] Integrated password verification into login flow
+- [x] Configured `pwdlib`
+- [x] Added `hash_password()`
+- [x] Added `verify_password()`
+- [x] Integrated password verification
 
 ### 🔐 User Login
-
 - [x] Created `POST /auth/login`
 - [x] Added username lookup
 - [x] Added password verification
-- [x] Added invalid username/password handling
-- [x] Tested login using FastAPI Swagger UI
-- [x] Verified successful login with `200 OK`
+- [x] Handled invalid credentials
+- [x] Tested with Swagger UI
+- [x] Verified `200 OK`
+
+### 🔐 JWT Authentication
+- [x] Created `utils/jwt.py`
+- [x] Installed `python-jose[cryptography]`
+- [x] Configured JWT
+- [x] Added `HS256` algorithm
+- [x] Added token expiration
+- [x] Created `create_access_token()`
+- [x] Created `decode_access_token()`
+- [x] Integrated JWT with login
+- [x] Successfully generated access token
+- [x] Verified JWT login with `200 OK`
 
 ### 🧪 API Testing
+- [x] Tested registration with Swagger UI
+- [x] Tested login with Swagger UI
+- [x] Verified JWT access token generation
 
-Registration and login tested using **FastAPI Swagger UI**.
-
-#### ✅ Successful Registration
-
-```json
-{
-  "username": "mukesh2",
-  "email": "mukesh2@example.com",
-  "password": "Test@123"
-}
+### 🚀 Next Task
+- [ ] Create JWT authentication dependency
+- [ ] Protect API endpoints with Bearer Token
+- [ ] Create `GET /auth/me`
+- [ ] Verify authenticated user
