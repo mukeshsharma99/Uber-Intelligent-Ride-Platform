@@ -10,6 +10,7 @@ from services.auth_service.app.utils.security import (
     verify_password
 )
 from services.auth_service.app.utils.jwt import create_access_token
+from services.auth_service.app.utils.auth import get_current_user
 
 
 auth_router = APIRouter(
@@ -128,4 +129,31 @@ def login_user(
         "id": existing_user.id,
         "username": existing_user.username,
         "email": existing_user.email
+    }
+
+
+# =========================
+# Get Current User
+# =========================
+
+@auth_router.get("/me")
+def get_me(
+    current_user: str = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+
+    user = db.query(User).filter(
+        User.username == current_user
+    ).first()
+
+    if not user:
+        raise HTTPException(
+            status_code=404,
+            detail="User not found"
+        )
+
+    return {
+        "id": user.id,
+        "username": user.username,
+        "email": user.email
     }
