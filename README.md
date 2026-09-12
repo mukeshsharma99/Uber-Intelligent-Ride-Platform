@@ -5,6 +5,7 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 ## 📈 Current Development Progress
 
 ### 🏗️ Project Foundation
+
 - [x] GitHub repository & project structure
 - [x] Python virtual environment
 - [x] `.gitignore` & README
@@ -28,20 +29,28 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] Added user `role` field
 - [x] Set default role to `USER`
 - [x] Verified user roles in PostgreSQL
+- [x] Added protected `GET /auth/users`
 
 ### 🧪 API Testing
+
 - [x] Registration with Swagger UI
 - [x] Login & JWT generation
 - [x] Bearer token authorization
 - [x] Protected `/auth/me`
+- [x] Protected `/auth/users`
 - [x] Verified `200 OK`
+- [x] Verified authenticated user details
+- [x] Verified users and roles through Swagger UI
 
-### 🚀 Today's Task
-- [ ] Add user roles (`rider`, `driver`, `admin`)
-- [ ] Implement role-based authorization
-- [ ] Secure role-specific endpoints
+## 🛠️ Technology Stack
 
-### 📌 Next
-- [ ] Start Rider Service
-- [ ] Create rider profile
-- [ ] Add rider APIs
+- Python
+- FastAPI
+- PostgreSQL
+- SQLAlchemy
+- JWT
+- Argon2
+- Docker
+- Microservices
+- Machine Learning
+- AI
