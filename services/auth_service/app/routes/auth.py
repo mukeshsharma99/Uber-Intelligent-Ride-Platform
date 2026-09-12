@@ -158,3 +158,24 @@ def get_me(
         "email": user.email,
         "role": user.role
     }
+
+# =========================
+# Get All Users
+# =========================
+
+@auth_router.get("/users")
+def get_all_users(
+    current_user: str = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    users = db.query(User).all()
+
+    return [
+        {
+            "id": user.id,
+            "username": user.username,
+            "email": user.email,
+            "role": user.role
+        }
+        for user in users
+    ]
