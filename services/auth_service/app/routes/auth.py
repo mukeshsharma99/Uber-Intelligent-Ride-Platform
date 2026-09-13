@@ -62,7 +62,8 @@ def register_user(
     new_user = User(
         username=user.username,
         email=user.email,
-        password_hash=hashed_password
+        password_hash=hashed_password,
+        role=user.role
     )
 
     try:
@@ -80,7 +81,8 @@ def register_user(
     return {
         "id": new_user.id,
         "username": new_user.username,
-        "email": new_user.email
+        "email": new_user.email,
+        "role": new_user.role
     }
 
 
@@ -128,7 +130,8 @@ def login_user(
         "token_type": "bearer",
         "id": existing_user.id,
         "username": existing_user.username,
-        "email": existing_user.email
+        "email": existing_user.email,
+        "role": existing_user.role
     }
 
 
@@ -159,6 +162,7 @@ def get_me(
         "role": user.role
     }
 
+
 # =========================
 # Get All Users
 # =========================
@@ -168,6 +172,7 @@ def get_all_users(
     current_user: str = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
+
     users = db.query(User).all()
 
     return [
