@@ -27,9 +27,13 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] Protected `GET /auth/me`
 - [x] Verified authenticated user
 - [x] Added user `role` field
-- [x] Set default role to `USER`
 - [x] Verified user roles in PostgreSQL
 - [x] Added protected `GET /auth/users`
+- [x] Tested `/auth/users` with JWT authentication
+- [x] Added role selection during registration
+- [x] Added default `RIDER` role for registration
+- [x] Verified RIDER registration through Swagger UI
+- [x] Verified RIDER login with JWT
 
 ### 🧪 API Testing
 
