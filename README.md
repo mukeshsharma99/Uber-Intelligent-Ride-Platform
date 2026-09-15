@@ -11,7 +11,7 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] `.gitignore` & README
 - [x] Initial GitHub push
 
-### 🔐 Authentication Service
+### 🔐 **Authentication Service**
 
 - [x] FastAPI & Uvicorn setup
 - [x] `/health` endpoint
@@ -36,6 +36,12 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] Verified RIDER login with JWT
 - [x] Created Rider model
 - [x] Created Riders database table
+- [x] Created Rider schemas
+- [x] Added `POST /riders/profile`
+- [x] Added RIDER role verification for rider profile
+- [x] Linked Rider profile with User
+- [x] Tested Rider profile creation through Swagger UI
+- [x] Verified Rider profile in PostgreSQL
 
 ### 🧪 API Testing
 
