@@ -34,6 +34,9 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] Added default `RIDER` role for registration
 - [x] Verified RIDER registration through Swagger UI
 - [x] Verified RIDER login with JWT
+
+### 🚗 **Rider Profile**
+
 - [x] Created Rider model
 - [x] Created Riders database table
 - [x] Created Rider schemas
@@ -42,6 +45,9 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] Linked Rider profile with User
 - [x] Tested Rider profile creation through Swagger UI
 - [x] Verified Rider profile in PostgreSQL
+- [x] Added `GET /riders/profile`
+- [x] Added RIDER role verification for viewing rider profile
+- [x] Tested `GET /riders/profile` with JWT authentication
 
 ### 🧪 API Testing
 
