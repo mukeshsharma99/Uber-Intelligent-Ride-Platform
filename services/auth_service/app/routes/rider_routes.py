@@ -61,3 +61,43 @@ def create_rider_profile(
     db.refresh(new_rider)
 
     return new_rider
+
+
+# 👇 ADD THIS BELOW THE POST ENDPOINT
+
+@rider_router.get("/profile", response_model=RiderResponse)
+def get_rider_profile(
+    db: Session = Depends(get_db),
+    username: str = Depends(get_current_user)
+):
+    current_user = (
+        db.query(User)
+        .filter(User.username == username)
+        .first()
+    )
+
+    if current_user is None:
+        raise HTTPException(
+            status_code=404,
+            detail="User not found"
+        )
+
+    if current_user.role != "RIDER":
+        raise HTTPException(
+            status_code=403,
+            detail="Only RIDER users can view a rider profile"
+        )
+
+    rider_profile = (
+        db.query(Rider)
+        .filter(Rider.user_id == current_user.id)
+        .first()
+    )
+
+    if rider_profile is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Rider profile not found"
+        )
+
+    return rider_profile
