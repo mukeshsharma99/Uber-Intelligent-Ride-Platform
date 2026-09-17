@@ -100,4 +100,4 @@ def get_rider_profile(
             detail="Rider profile not found"
         )
 
-    return rider_profile
+    return rider_profile   
