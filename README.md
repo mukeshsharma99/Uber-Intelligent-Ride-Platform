@@ -37,28 +37,26 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 
 ### 🚗 **Rider Profile**
 
-- [x] Created Rider model
-- [x] Created Riders database table
-- [x] Created Rider schemas
-- [x] Added `POST /riders/profile`
-- [x] Added RIDER role verification for rider profile
-- [x] Linked Rider profile with User
-- [x] Tested Rider profile creation through Swagger UI
-- [x] Verified Rider profile in PostgreSQL
-- [x] Added `GET /riders/profile`
-- [x] Added RIDER role verification for viewing rider profile
-- [x] Tested `GET /riders/profile` with JWT authentication
+- [x] Added Rider model
+- [x] Added Rider schema
+- [x] Added Rider routes
+- [x] Connected Rider profile with authenticated user
+- [x] Added RIDER role validation
+- [x] Created protected `POST /riders/profile`
+- [x] Tested rider profile creation with JWT
+- [x] Created protected `GET /riders/profile`
+- [x] Tested rider profile retrieval with JWT
+- [x] Verified Rider data in PostgreSQL
+- [x] Verified Rider Profile APIs through Swagger UI
 
-### 🧪 API Testing
 
-- [x] Registration with Swagger UI
-- [x] Login & JWT generation
-- [x] Bearer token authorization
-- [x] Protected `/auth/me`
-- [x] Protected `/auth/users`
-- [x] Verified `200 OK`
-- [x] Verified authenticated user details
-- [x] Verified users and roles through Swagger UI
+<!-- Authentication Service   ████████████████████ 100% ✅
+<!-- Rider Profile            ████████████████████ 100% ✅ -->
+<!-- Driver Service            ░░░░░░░░░░░░░░░░░░░░   0% -->
+<!-- Ride Service              ░░░░░░░░░░░░░░░░░░░░   0% -->
+<!-- API Gateway               ░░░░░░░░░░░░░░░░░░░░   0% --> -->
+
+
 
 ## 🛠️ Technology Stack
 
