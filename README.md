@@ -49,12 +49,16 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] Verified Rider data in PostgreSQL
 - [x] Verified Rider Profile APIs through Swagger UI
 
+### 🚗 **Driver profile**
 
-<!-- Authentication Service   ████████████████████ 100% ✅
-<!-- Rider Profile            ████████████████████ 100% ✅ -->
-<!-- Driver Service            ░░░░░░░░░░░░░░░░░░░░   0% -->
-<!-- Ride Service              ░░░░░░░░░░░░░░░░░░░░   0% -->
-<!-- API Gateway               ░░░░░░░░░░░░░░░░░░░░   0% --> -->
+- [x] Added folder
+
+
+Authentication Service   ████████████████████ 100% ✅
+Rider Profile            ████████████████████ 100% ✅
+Driver Service            ░░░░░░░░░░░░░░░░░░░░   0%
+Ride Service              ░░░░░░░░░░░░░░░░░░░░   0%
+API Gateway               ░░░░░░░░░░░░░░░░░░░░   0%
 
 
 
