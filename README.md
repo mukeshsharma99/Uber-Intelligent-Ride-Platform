@@ -54,6 +54,8 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] Added Driver folder
 - [x] Added Driver model
 - [x] Created `drivers` table in PostgreSQL
+- [x] Created Driver schema
+- [x] Tested Driver schema
 
 
 
