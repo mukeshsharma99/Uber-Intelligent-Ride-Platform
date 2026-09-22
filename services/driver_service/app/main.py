@@ -1,10 +1,16 @@
 from fastapi import FastAPI
 
-from services.auth_service.app.database import Base, engine
-from services.auth_service.app.models.user import User
-from services.driver_service.app.models.driver_model import Driver
+from services.driver_service.app.routes.driver_routes import router as driver_router
 
 
-Base.metadata.create_all(bind=engine)
+app = FastAPI(
+    title="Driver Service"
+)
 
-app = FastAPI()
+
+app.include_router(driver_router)
+
+
+@app.get("/health")
+def health_check():
+    return {"status": "Driver Service is running"}
