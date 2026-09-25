@@ -63,25 +63,16 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 ### 🚕 **Ride Service**
 
 * [x] Added Ride Service folder
-
 * [x] Created Ride Service application structure
-
 * [x] Added `models` folder
-
 * [x] Added `routes` folder
-
 * [x] Added `schemas` folder
-
 * [x] Added `services` folder
-
 * [x] Added `utils` folder
-
 * [x] Added `database.py`
-
 * [x] Added `main.py`
-
 * [x] Added `Ride` model
-
+* [x] Created Ride Schema
 
 
 
