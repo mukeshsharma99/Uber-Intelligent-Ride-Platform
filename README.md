@@ -74,18 +74,19 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 
 
 
-## 🛠️ Technology Stack
+### 🛠️ Tech Stack
 
-- Python
-- FastAPI
-- PostgreSQL
-- SQLAlchemy
-- JWT
-- Argon2
-- Docker
-- Microservices
-- Machine Learning
-- AI
+* **Programming Language:** Python
+* **Backend Framework:** FastAPI
+* **Database:** PostgreSQL
+* **ORM:** SQLAlchemy
+* **Authentication:** JWT, Argon2
+* **Containerization:** Docker
+* **Cloud Platform:** AWS
+* **Cloud Deployment:** AWS Cloud Deployment
+* **CI/CD:** GitHub Actions
+* **Architecture:** Microservices
+* **AI & ML:** Artificial Intelligence, Machine Learning
 
 
 ## By -Mukesh kumar   
