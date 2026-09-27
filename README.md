@@ -65,12 +65,18 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 * [x] Added Ride Service folder
 * [x] Created Ride Service application structure
 * [x] Created models, routes, schemas, services, and utils folders
-* [x] Added database.py
-* [x] Added main.py
+* [x] Added `database.py`
+* [x] Added `main.py`
 * [x] Created Ride Model
 * [x] Created Ride Schema
 * [x] Started Ride Service on port 8002
 * [x] Verified Swagger documentation
+* [x] Created `rides` database table
+* [x] Connected Ride Service to PostgreSQL
+* [x] Implemented `POST /rides/` endpoint
+* [x] Tested ride creation successfully in Swagger
+* [x] Verified successful response with ride details
+
 
 
 
