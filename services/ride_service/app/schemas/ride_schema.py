@@ -1,4 +1,3 @@
-
 from pydantic import BaseModel
 from typing import Optional
 
@@ -6,7 +5,8 @@ from typing import Optional
 class RideCreate(BaseModel):
     rider_id: int
     pickup_location: str
-    drop_location: str
+    dropoff_location: str
+    fare: Optional[float] = None
 
 
 class RideResponse(BaseModel):
