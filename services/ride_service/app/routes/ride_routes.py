@@ -1,11 +1,10 @@
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.database import SessionLocal
 from app.models.ride import Ride
 from app.schemas.ride_schema import RideCreate
-
 
 router = APIRouter(
     prefix="/rides",
@@ -21,15 +20,43 @@ def get_db():
         db.close()
 
 
+# Create a new ride
 @router.post("/")
 def create_ride(
-    ride: RideCreate,
+    ride_data: RideCreate,
     db: Session = Depends(get_db)
 ):
-    new_ride = Ride(**ride.model_dump())
+    new_ride = Ride(**ride_data.model_dump())
 
     db.add(new_ride)
     db.commit()
     db.refresh(new_ride)
 
     return new_ride
+
+
+# Get all rides
+@router.get("/")
+def get_all_rides(
+    db: Session = Depends(get_db)
+):
+    return db.query(Ride).all()
+
+
+# Get ride by ID
+@router.get("/{ride_id}")
+def get_ride_by_id(
+    ride_id: int,
+    db: Session = Depends(get_db)
+):
+    ride = db.query(Ride).filter(
+        Ride.id == ride_id
+    ).first()
+
+    if ride is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Ride not found"
+        )
+
+    return ride
