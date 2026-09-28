@@ -76,6 +76,10 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 * [x] Implemented `POST /rides/` endpoint
 * [x] Tested ride creation successfully in Swagger
 * [x] Verified successful response with ride details
+* [x] Implemented `GET /rides/` endpoint
+* [x] Implemented `GET /rides/{ride_id}` endpoint
+* [x] Tested ride creation and verified records in PostgreSQL
+
 
 
 
