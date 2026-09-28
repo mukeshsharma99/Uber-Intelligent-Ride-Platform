@@ -11,56 +11,70 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] `.gitignore` & README
 - [x] Initial GitHub push
 
-### 🔐 **Authentication Service**
+## 🔐 Authentication Service
 
-- [x] FastAPI & Uvicorn setup
-- [x] `/health` endpoint
-- [x] APIRouter
-- [x] PostgreSQL & SQLAlchemy
-- [x] User model & schemas
-- [x] User registration
-- [x] Argon2 password hashing
-- [x] User login
-- [x] JWT authentication
-- [x] JWT expiration
-- [x] Bearer token authentication
-- [x] Protected `GET /auth/me`
-- [x] Verified authenticated user
-- [x] Added user `role` field
-- [x] Verified user roles in PostgreSQL
-- [x] Added protected `GET /auth/users`
-- [x] Tested `/auth/users` with JWT authentication
-- [x] Added role selection during registration
-- [x] Added default `RIDER` role for registration
-- [x] Verified RIDER registration through Swagger UI
-- [x] Verified RIDER login with JWT
+**Swagger URL:** `http://127.0.0.1:8000/docs`
 
-### 🚗 **Rider Profile**
+* [x] FastAPI & Uvicorn setup
+* [x] `/health` endpoint
+* [x] APIRouter
+* [x] PostgreSQL & SQLAlchemy
+* [x] User model & schemas
+* [x] User registration
+* [x] Argon2 password hashing
+* [x] User login
+* [x] JWT authentication
+* [x] JWT expiration
+* [x] Bearer token authentication
+* [x] Protected `GET /auth/me`
+* [x] Verified authenticated user
+* [x] Added user `role` field
+* [x] Verified user roles in PostgreSQL
+* [x] Added protected `GET /auth/users`
+* [x] Tested `/auth/users` with JWT authentication
+* [x] Added role selection during registration
+* [x] Added default `RIDER` role for registration
+* [x] Verified RIDER registration through Swagger UI
+* [x] Verified RIDER login with JWT
 
-- [x] Added Rider model
-- [x] Added Rider schema
-- [x] Added Rider routes
-- [x] Connected Rider profile with authenticated user
-- [x] Added RIDER role validation
-- [x] Created protected `POST /riders/profile`
-- [x] Tested rider profile creation with JWT
-- [x] Created protected `GET /riders/profile`
-- [x] Tested rider profile retrieval with JWT
-- [x] Verified Rider data in PostgreSQL
-- [x] Verified Rider Profile APIs through Swagger UI
+---
 
-### 🚗 **Driver Profile**
+## 🚗 Rider Profile
 
-- [x] Added Driver folder
-- [x] Added Driver model
-- [x] Created `drivers` table in PostgreSQL
-- [x] Created Driver schema
-- [x] Tested Driver schema
-- [x] Created Driver profile routes
-- [x] Connected Driver routes to Driver service
-- [x] Tested Driver Service
+**Swagger URL:** `http://127.0.0.1:8000/docs`
 
-### 🚕 Ride Service
+* [x] Added Rider model
+* [x] Added Rider schema
+* [x] Added Rider routes
+* [x] Connected Rider profile with authenticated user
+* [x] Added RIDER role validation
+* [x] Created protected `POST /riders/profile`
+* [x] Tested rider profile creation with JWT
+* [x] Created protected `GET /riders/profile`
+* [x] Tested rider profile retrieval with JWT
+* [x] Verified Rider data in PostgreSQL
+* [x] Verified Rider Profile APIs through Swagger UI
+
+---
+
+## 🚗 Driver Profile
+
+**Swagger URL:** `http://127.0.0.1:8001/docs`
+
+* [x] Added Driver folder
+* [x] Added Driver model
+* [x] Created `drivers` table in PostgreSQL
+* [x] Created Driver schema
+* [x] Tested Driver schema
+* [x] Created Driver profile routes
+* [x] Connected Driver routes to Driver service
+* [x] Tested Driver Service
+
+---
+
+## 🚕 Ride Service
+
+**Swagger URL:** `http://127.0.0.1:8002/docs`
 
 * [x] Added Ride Service folder
 * [x] Created Ride Service application structure
@@ -80,23 +94,22 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 * [x] Implemented `GET /rides/{ride_id}` endpoint
 * [x] Tested ride creation and verified records in PostgreSQL
 
+---
+
+## 🛠️ Technology Stack
+
+* Python
+* FastAPI
+* PostgreSQL
+* SQLAlchemy
+* JWT Authentication
+* Argon2
+* Docker
+* Microservices
+* Machine Learning
+* Artificial Intelligence
+* AWS
+* CI/CD
 
 
-
-
-### 🛠️ Tech Stack
-
-* **Programming Language:** Python
-* **Backend Framework:** FastAPI
-* **Database:** PostgreSQL
-* **ORM:** SQLAlchemy
-* **Authentication:** JWT, Argon2
-* **Containerization:** Docker
-* **Cloud Platform:** AWS
-* **Cloud Deployment:** AWS Cloud Deployment
-* **CI/CD:** GitHub Actions
-* **Architecture:** Microservices
-* **AI & ML:** Artificial Intelligence, Machine Learning
-
-
-## By -Mukesh kumar   
+## By Mukesh Kumar
