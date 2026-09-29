@@ -1,5 +1,6 @@
+
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Literal
 
 
 class RideCreate(BaseModel):
@@ -19,3 +20,13 @@ class RideResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class RideStatusUpdate(BaseModel):
+    status: Literal[
+        "REQUESTED",
+        "ACCEPTED",
+        "IN_PROGRESS",
+        "COMPLETED",
+        "CANCELLED"
+    ]
