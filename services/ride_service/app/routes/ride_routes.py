@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from app.database import SessionLocal
 from app.models.ride import Ride
-from app.schemas.ride_schema import RideCreate
+from app.schemas.ride_schema import RideCreate, RideStatusUpdate
 
 router = APIRouter(
     prefix="/rides",
@@ -58,5 +58,30 @@ def get_ride_by_id(
             status_code=404,
             detail="Ride not found"
         )
+
+    return ride
+
+
+# Update ride status
+@router.patch("/{ride_id}/status")
+def update_ride_status(
+    ride_id: int,
+    status_data: RideStatusUpdate,
+    db: Session = Depends(get_db)
+):
+    ride = db.query(Ride).filter(
+        Ride.id == ride_id
+    ).first()
+
+    if ride is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Ride not found"
+        )
+
+    ride.status = status_data.status
+
+    db.commit()
+    db.refresh(ride)
 
     return ride
