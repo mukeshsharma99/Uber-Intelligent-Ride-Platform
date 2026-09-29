@@ -76,6 +76,8 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 
 **Swagger URL:** `http://127.0.0.1:8002/docs`
 
+### Ride Service Setup
+
 * [x] Added Ride Service folder
 * [x] Created Ride Service application structure
 * [x] Created models, routes, schemas, services, and utils folders
@@ -87,14 +89,24 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 * [x] Verified Swagger documentation
 * [x] Created `rides` database table
 * [x] Connected Ride Service to PostgreSQL
+
+### Ride APIs
+
 * [x] Implemented `POST /rides/` endpoint
 * [x] Tested ride creation successfully in Swagger
 * [x] Verified successful response with ride details
 * [x] Implemented `GET /rides/` endpoint
 * [x] Implemented `GET /rides/{ride_id}` endpoint
-* [x] Tested ride creation and verified records in PostgreSQL
+* [x] Tested ride retrieval by ID
+* [x] Verified ride records in PostgreSQL
+* [x] Implemented `PATCH /rides/{ride_id}/status` endpoint
+* [x] Created `RideStatusUpdate` schema
+* [x] Added ride status validation using Pydantic
+* [x] Tested ride status update in Swagger
+* [x] Verified successful API response with HTTP 200
 
----
+
+----
 
 ## 🛠️ Technology Stack
 
