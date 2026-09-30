@@ -1,4 +1,3 @@
-
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
@@ -10,6 +9,15 @@ router = APIRouter(
     prefix="/rides",
     tags=["Rides"]
 )
+
+
+ALLOWED_TRANSITIONS = {
+    "REQUESTED": ["ACCEPTED", "CANCELLED"],
+    "ACCEPTED": ["ONGOING", "CANCELLED"],
+    "ONGOING": ["COMPLETED", "CANCELLED"],
+    "COMPLETED": [],
+    "CANCELLED": []
+}
 
 
 def get_db():
@@ -79,7 +87,17 @@ def update_ride_status(
             detail="Ride not found"
         )
 
-    ride.status = status_data.status
+    current_status = ride.status
+    new_status = status_data.status
+
+    # Validate status transition
+    if new_status not in ALLOWED_TRANSITIONS[current_status]:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid status transition: {current_status} -> {new_status}"
+        )
+
+    ride.status = new_status
 
     db.commit()
     db.refresh(ride)
