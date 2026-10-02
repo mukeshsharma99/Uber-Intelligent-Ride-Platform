@@ -116,16 +116,3 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 
 -  Added API Gateway folder
 -  Added Nginx API Gateway configuration
-
-### API Gateway Routing
-
-```text
-Client
-  │
-  ↓
-API Gateway :9000
-  │
-  ├── /auth/*     → Auth Service :8000
-  ├── /riders/*   → Rider Service :8000
-  ├── /drivers/*  → Driver Service :8001
-  └── /rides/*    → Ride Service :8002
