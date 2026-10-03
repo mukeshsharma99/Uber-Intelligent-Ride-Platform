@@ -114,5 +114,7 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 
 ## 🌐 API Gateway
 
--  Added API Gateway folder
--  Added Nginx API Gateway configuration
+- [x] Added API Gateway folder
+- [x] Added Nginx API Gateway configuration
+- [ ] Configured gateway to listen on port 9000
+- [ ] Configured routing to backend services
