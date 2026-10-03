@@ -103,3 +103,5 @@ def update_ride_status(
     db.refresh(ride)
 
     return ride
+
+
