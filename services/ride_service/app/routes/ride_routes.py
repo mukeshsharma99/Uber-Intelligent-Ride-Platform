@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from app.database import SessionLocal
-from app.models.ride import Ride
-from app.schemas.ride_schema import RideCreate, RideStatusUpdate
+from services.ride_service.app.database import SessionLocal
+from services.ride_service.app.models.ride import Ride
+from services.ride_service.app.schemas.ride_schema import RideCreate, RideStatusUpdate
 
 router = APIRouter(
     prefix="/rides",
@@ -90,7 +90,6 @@ def update_ride_status(
     current_status = ride.status
     new_status = status_data.status
 
-    # Validate status transition
     if new_status not in ALLOWED_TRANSITIONS[current_status]:
         raise HTTPException(
             status_code=400,
@@ -103,5 +102,3 @@ def update_ride_status(
     db.refresh(ride)
 
     return ride
-
-
