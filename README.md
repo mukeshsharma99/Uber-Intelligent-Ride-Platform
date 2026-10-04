@@ -2,119 +2,152 @@
 
 A real-world inspired ride-hailing backend built with **Python, FastAPI, Microservices, PostgreSQL, Docker, Machine Learning, and AI**.
 
-## 📈 Current Development Progress
+---
 
-### 🏗️ Project Foundation
+# 📈 Current Development Progress
 
--  GitHub repository & project structure
--  Python virtual environment
-- `.gitignore` & README
--  Initial GitHub push
+## 🏗️ Project Foundation
+
+- [x] GitHub repository and project structure
+- [x] Python virtual environment
+- [x] `.gitignore`
+- [x] README
+- [x] Initial GitHub push
 
 ---
 
-## 🔐 Authentication Service
+# 🔐 Authentication Service
 
-**Swagger URL:** `http://127.0.0.1:8000/docs`
+**Swagger:** http://127.0.0.1:8000/docs
 
--  FastAPI & Uvicorn setup
-- `/health` endpoint
--  APIRouter
--  PostgreSQL & SQLAlchemy
--  User model & schemas
--  User registration
--  Argon2 password hashing
--  User login
--  JWT authentication
--  JWT expiration
--  Bearer token authentication
--  Protected `GET /auth/me`
--  Verified authenticated user
--  Added user `role` field
--  Verified user roles in PostgreSQL
--  Added protected `GET /auth/users`
--  Tested `/auth/users` with JWT authentication
--  Added role selection during registration
--  Added default `RIDER` role for registration
--  Verified RIDER registration through Swagger UI
--  Verified RIDER login with JWT
+### Authentication Setup
 
----
-
-## 🚗 Rider Profile
-
-**Swagger URL:** `http://127.0.0.1:8000/docs`
-
--  Added Rider model
--  Added Rider schema
--  Added Rider routes
--  Connected Rider profile with authenticated user
--  Added RIDER role validation
--  Created protected `POST /riders/profile`
--  Tested rider profile creation with JWT
--  Created protected `GET /riders/profile`
--  Tested rider profile retrieval with JWT
--  Verified Rider data in PostgreSQL
--  Verified Rider Profile APIs through Swagger UI
+- [x] FastAPI & Uvicorn setup
+- [x] `/health` endpoint
+- [x] APIRouter
+- [x] PostgreSQL & SQLAlchemy
+- [x] User model and schemas
+- [x] User registration
+- [x] Argon2 password hashing
+- [x] User login
+- [x] JWT authentication
+- [x] JWT expiration
+- [x] Bearer token authentication
+- [x] Protected `GET /auth/me`
+- [x] Verified authenticated user
+- [x] Added user `role` field
+- [x] Verified user roles in PostgreSQL
+- [x] Added protected `GET /auth/users`
+- [x] Tested `/auth/users` with JWT authentication
+- [x] Added role selection during registration
+- [x] Added default `RIDER` role
+- [x] Verified RIDER registration through Swagger
+- [x] Verified RIDER login with JWT
 
 ---
 
-## 🚗 Driver Profile
+# 🚗 Rider Profile
 
-**Swagger URL:** `http://127.0.0.1:8001/docs`
+**Swagger:** http://127.0.0.1:8000/docs
 
--  Added Driver folder
--  Added Driver model
--  Created `drivers` table in PostgreSQL
--  Created Driver schema
--  Tested Driver schema
--  Created Driver profile routes
--  Connected Driver routes to Driver service
--  Tested Driver Service
-
----
-
-## 🚕 Ride Service
-
-**Swagger URL:** `http://127.0.0.1:8002/docs`
-
-### Ride Service Setup
-
--  Added Ride Service folder
--  Created Ride Service application structure
--  Created models, routes, schemas, services, and utils folders
--  Added `database.py`
--  Added `main.py`
--  Created Ride Model
--  Created Ride Schema
--  Started Ride Service on port 8002
--  Verified Swagger documentation
--  Created `rides` database table
--  Connected Ride Service to PostgreSQL
-
-### Ride APIs
-
--  Implemented `POST /rides/` endpoint
--  Tested ride creation successfully in Swagger
--  Verified successful response with ride details
--  Implemented `GET /rides/` endpoint
--  Implemented `GET /rides/{ride_id}` endpoint
--  Tested ride retrieval by ID
--  Verified ride records in PostgreSQL
--  Implemented `PATCH /rides/{ride_id}/status` endpoint
--  Created `RideStatusUpdate` schema
--  Added ride status validation using Pydantic
--  Added ride status transition validation
--  Tested valid ride status transitions in Swagger
--  Tested invalid ride status transitions in Swagger
--  Verified invalid transitions return HTTP 400
--  Verified successful status update returns HTTP 200
+- [x] Added Rider model
+- [x] Added Rider schema
+- [x] Added Rider routes
+- [x] Connected Rider profile with authenticated user
+- [x] Added RIDER role validation
+- [x] Created protected `POST /riders/profile`
+- [x] Tested rider profile creation with JWT
+- [x] Created protected `GET /riders/profile`
+- [x] Tested rider profile retrieval with JWT
+- [x] Verified Rider data in PostgreSQL
+- [x] Verified Rider Profile APIs through Swagger
 
 ---
 
-## 🌐 API Gateway
+# 🚘 Driver Service
 
-- [x] Added API Gateway folder
-- [x] Added Nginx API Gateway configuration
-- [ ] Configured gateway to listen on port 9000
-- [ ] Configured routing to backend services
+**Swagger:** http://127.0.0.1:8001/docs
+
+### Driver Service Setup
+
+- [x] Added Driver Service
+- [x] Added Driver folder structure
+- [x] Added Driver model
+- [x] Created `drivers` table in PostgreSQL
+- [x] Created Driver schema
+- [x] Created Driver profile routes
+- [x] Connected Driver routes to Driver Service
+- [x] Tested Driver Service
+- [x] Tested Driver profile creation
+- [ ] Add JWT authentication to Driver Service
+- [ ] Add DRIVER role validation
+- [ ] Add driver availability/status
+- [ ] Add driver location tracking
+
+---
+
+# 🚕 Ride Service
+
+**Swagger:** http://127.0.0.1:8002/docs
+
+## Ride Service Setup
+
+- [x] Added Ride Service
+- [x] Created Ride Service application structure
+- [x] Created models, routes, schemas, services, and utils folders
+- [x] Added `database.py`
+- [x] Added `main.py`
+- [x] Created Ride model
+- [x] Created Ride schema
+- [x] Started Ride Service on port `8002`
+- [x] Verified Swagger documentation
+- [x] Created `rides` table
+- [x] Connected Ride Service to PostgreSQL
+
+## Ride APIs
+
+- [x] Implemented `POST /rides/`
+- [x] Tested ride creation successfully
+- [x] Verified ride creation response
+- [x] Implemented `GET /rides/`
+- [x] Implemented `GET /rides/{ride_id}`
+- [x] Tested ride retrieval by ID
+- [x] Verified ride records in PostgreSQL
+- [x] Implemented `PATCH /rides/{ride_id}/status`
+- [x] Created `RideStatusUpdate` schema
+- [x] Added ride status validation using Pydantic
+- [x] Added ride status transition validation
+- [x] Tested valid ride status transitions
+- [x] Tested invalid ride status transitions
+- [x] Verified invalid transitions return HTTP `400`
+- [x] Verified successful status updates return HTTP `200`
+
+
+----
+
+# 🌐 API Gateway
+
+**Technology:** NGINX  
+**Gateway Port:** `9000`
+
+## API Gateway Development Process
+
+### 1. NGINX Installation
+
+- [x] Downloaded and installed NGINX
+- [x] Located NGINX installation
+- [x] Verified `nginx.exe`
+- [x] Verified NGINX configuration
+
+### 2. Gateway Configuration
+
+- [x] Created NGINX API Gateway configuration
+- [x] Configured gateway to listen on port `9000`
+- [x] Configured backend service upstreams
+
+```text
+Auth Service       → 127.0.0.1:8000
+Driver Service     → 127.0.0.1:8001
+Ride Service       → 127.0.0.1:8002
+Rider Service      → 127.0.0.1:8003 (Planned)
+
