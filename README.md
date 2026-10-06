@@ -145,9 +145,25 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] Configured gateway to listen on port `9000`
 - [x] Configured backend service upstreams
 
-```text
-Auth Service       → 127.0.0.1:8000
-Driver Service     → 127.0.0.1:8001
-Ride Service       → 127.0.0.1:8002
-Rider Service      → 127.0.0.1:8003 (Planned)
+----
 
+## Matching Service Setup
+
+uvicorn services.matching-service.app.main:app --reload --port 8004
+
+**Swagger:** http://127.0.0.1:8004/docs
+
+- [x] Added Matching Service
+- [x] Created Matching Service application structure
+- [x] Created `app/` directory
+- [x] Added `__init__.py`
+- [x] Added FastAPI `main.py`
+- [x] Started Matching Service on port `8004`
+- [x] Added Matching Service metadata
+- [x] Added `GET /health`
+- [x] Verified Matching Service through Swagger
+
+## Matching Service APIs
+
+- [x] Implemented `GET /health`
+- [x] Tested health check successfully
