@@ -158,10 +158,7 @@ uvicorn services.matching-service.app.main:app --reload --port 8004
 - [x] Created `app/` directory
 - [x] Added `__init__.py`
 - [x] Added FastAPI `main.py`
-- [x] Started Matching Service on port `8004`
-- [x] Added Matching Service metadata
-- [x] Added `GET /health`
-- [x] Verified Matching Service through Swagger
+
 
 ## Matching Service APIs
 
