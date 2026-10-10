@@ -164,7 +164,3 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 
 - [x] Implemented `GET /health`
 - [x] Tested health check successfully
-
-
-
-By Mukesh Kumar
