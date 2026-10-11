@@ -159,8 +159,12 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] Added `__init__.py`
 - [x] Added FastAPI `main.py`
 
-
 ## Matching Service APIs
 
 - [x] Implemented `GET /health`
 - [x] Tested health check successfully
+- [x] Implemented `POST /match`
+- [x] Tested driver matching successfully
+- [x] Added basic available-driver filtering
+- [x] Added nearest-driver selection logic
+- [x] Verified `/match` response through Swagger
