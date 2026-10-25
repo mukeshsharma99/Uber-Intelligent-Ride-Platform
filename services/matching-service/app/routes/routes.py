@@ -4,7 +4,7 @@ from app.services.matching_service import find_best_driver
 router = APIRouter()
 
 
-@router.post("/match")
+@router.post("/Match")
 def match_ride(ride: dict):
 
     drivers = [
