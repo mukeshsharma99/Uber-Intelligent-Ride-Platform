@@ -1,28 +1,39 @@
+from app.database.redis import redis_client
+
+
+def initialize_drivers():
+    redis_client.delete("available_drivers")
+
+    redis_client.sadd(
+        "available_drivers",
+        1,
+        2,
+    )
+
+
 def find_driver():
-    drivers = [
+    drivers = redis_client.smembers("available_drivers")
+
+    if not drivers:
+        return None
+
+    driver_data = [
         {
             "id": 1,
             "name": "Driver 1",
-            "available": True,
             "distance": 2.5,
         },
         {
             "id": 2,
             "name": "Driver 2",
-            "available": True,
             "distance": 1.2,
-        },
-        {
-            "id": 3,
-            "name": "Driver 3",
-            "available": False,
-            "distance": 0.8,
         },
     ]
 
     available_drivers = [
-        driver for driver in drivers
-        if driver["available"]
+        driver
+        for driver in driver_data
+        if str(driver["id"]) in drivers
     ]
 
     if not available_drivers:
