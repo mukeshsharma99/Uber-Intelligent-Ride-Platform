@@ -1,41 +1,33 @@
-from fastapi import APIRouter
-from app.services.matching_service import find_best_driver
+from fastapi import APIRouter, HTTPException
+
+from app.schema import MatchRequest, MatchResponse
+from app.services.matching_service import find_driver
+
 
 router = APIRouter()
 
 
-@router.post("/Match")
-def match_ride(ride: dict):
+@router.get("/health")
+def health_check():
+    return {
+        "status": "healthy",
+        "service": "matching-service",
+    }
 
-    drivers = [
-        {
-            "id": 1,
-            "name": "Driver 1",
-            "available": True,
-            "distance": 2.5
-        },
-        {
-            "id": 2,
-            "name": "Driver 2",
-            "available": True,
-            "distance": 1.2
-        },
-        {
-            "id": 3,
-            "name": "Driver 3",
-            "available": False,
-            "distance": 0.5
-        }
-    ]
 
-    driver = find_best_driver(drivers, ride)
+@router.post("/match", response_model=MatchResponse)
+def match_driver(request: MatchRequest):
+
+    driver = find_driver()
 
     if not driver:
-        return {
-            "message": "No driver available"
-        }
+        raise HTTPException(
+            status_code=404,
+            detail="No available driver found",
+        )
 
     return {
+        "ride_id": request.ride_id,
+        "driver_id": driver["id"],
         "message": "Driver matched successfully",
-        "driver": driver
     }
