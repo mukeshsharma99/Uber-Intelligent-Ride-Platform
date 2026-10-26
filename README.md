@@ -169,3 +169,12 @@ A real-world inspired ride-hailing backend built with **Python, FastAPI, Microse
 - [x] Added nearest-driver selection logic
 - [x] Verified `/match` response through Swagger
 
+## Redis Integration
+
+- [x] Added Redis using Docker
+- [x] Created `uber-redis` container
+- [x] Exposed Redis on port `6379`
+- [x] Verified Redis connection with `redis-cli ping`
+- [x] Confirmed Redis returned `PONG`
+- [x] Installed Python Redis client
+- [x] Added Redis connection configuration
