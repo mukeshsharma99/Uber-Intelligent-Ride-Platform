@@ -25,6 +25,7 @@ pydantic_core==2.46.4
 python-dotenv==1.2.3
 python-jose==3.5.0
 PyYAML==6.0.3
+redis==8.1.0
 rsa==4.9.1
 setuptools==83.0.0
 six==1.17.0
